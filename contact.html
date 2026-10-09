@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact AussiePath Education to book a free consultation.">
+    <title>Contact Us | AussiePath Education</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+
+<body class="flex flex-col min-h-screen bg-brand-bg">
+    <!-- Navbar Component -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i data-lucide="graduation-cap" class="text-brand-navy h-8 w-8"></i>
+                    <span class="font-bold text-xl text-brand-navy tracking-tight">AussiePath Education</span>
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-brand-navy hover:text-brand-blue font-medium transition-colors">Home</a>
+                    <a href="about.html"
+                        class="nav-link text-brand-navy hover:text-brand-blue font-medium transition-colors">About
+                        Us</a>
+                    <a href="contact.html" class="nav-link text-brand-blue font-semibold transition-colors">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="signin.html" class="text-brand-navy hover:text-brand-blue font-medium">Sign In</a>
+                    <a href="signup.html" class="text-brand-navy hover:text-brand-blue font-medium mr-2">Sign Up</a>
+                    <a href="contact.html"
+                        class="bg-brand-blue hover:bg-brand-navy text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm">
+                        Book a Consultation
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-navy hover:text-brand-blue focus:outline-none"
+                        aria-label="Open Menu">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Home</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">About
+                    Us</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy bg-brand-bg">Contact</a>
+                <div class="border-t border-gray-100 my-2 pt-2">
+                    <a href="signin.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Sign
+                        In</a>
+                    <a href="signup.html"
+                        class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Sign
+                        Up</a>
+                    <a href="contact.html"
+                        class="block mt-2 px-3 py-2 text-center rounded-lg text-base font-medium bg-brand-blue text-white hover:bg-brand-navy">Book
+                        a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Contact Page Hero Component -->
+        <section class="bg-brand-navy py-16 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Let's Connect</h1>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">Book a free consultation or send us your questions.
+                    We're here to help you start your Australian education journey.</p>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-12">
+
+                    <!-- Contact Information Cards -->
+                    <div class="lg:w-1/3 space-y-6">
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start space-x-4">
+                            <div class="bg-brand-bg p-3 rounded-lg">
+                                <i data-lucide="map-pin" class="text-brand-blue h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-navy text-lg mb-1">Office Address</h3>
+                                <p class="text-brand-slate text-sm">123 Education Boulevard<br>Sydney NSW 2000,
+                                    Australia</p>
+                                <span
+                                    class="inline-block mt-2 text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded">Demo
+                                    Address</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start space-x-4">
+                            <div class="bg-brand-bg p-3 rounded-lg">
+                                <i data-lucide="phone" class="text-brand-blue h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-navy text-lg mb-1">Telephone</h3>
+                                <a href="tel:+61200000000" class="text-brand-slate text-sm hover:text-brand-blue">+61 2
+                                    0000 0000</a>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start space-x-4">
+                            <div class="bg-brand-bg p-3 rounded-lg">
+                                <i data-lucide="mail" class="text-brand-blue h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-navy text-lg mb-1">Email Us</h3>
+                                <a href="mailto:hello@aussiepath-demo.edu.au"
+                                    class="text-brand-slate text-sm hover:text-brand-blue">hello@aussiepath-demo.edu.au</a>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start space-x-4">
+                            <div class="bg-brand-bg p-3 rounded-lg">
+                                <i data-lucide="clock" class="text-brand-blue h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-navy text-lg mb-1">Availability</h3>
+                                <p class="text-brand-slate text-sm">Mon-Fri: 9:00 AM - 6:00 PM (AEST)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Component -->
+                    <div class="lg:w-2/3">
+                        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8">
+                            <h2 class="text-2xl font-bold text-brand-navy mb-6">Book a Free Consultation</h2>
+
+                            <!-- Alert Component for form status -->
+                            <div id="form-alert" class="hidden mb-6 p-4 rounded-lg border"></div>
+
+                            <!-- INSTRUCTIONS: To use Formspree, replace the action attribute with your Formspree endpoint (e.g. https://formspree.io/f/YOUR_FORM_ID) -->
+                            <!-- Leave action empty to trigger JS demo validation mode -->
+                            <form id="contact-form" action="" method="POST" class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Input Group Component -->
+                                    <div class="space-y-2">
+                                        <label for="fullName" class="block text-sm font-medium text-brand-navy">Full
+                                            Name <span class="text-red-500">*</span></label>
+                                        <input type="text" id="fullName" name="fullName" required placeholder="John Doe"
+                                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label for="email" class="block text-sm font-medium text-brand-navy">Email
+                                            Address <span class="text-red-500">*</span></label>
+                                        <input type="email" id="email" name="email" required
+                                            placeholder="john@example.com"
+                                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="phone" class="block text-sm font-medium text-brand-navy">Phone
+                                            Number <span class="text-red-500">*</span></label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 8900"
+                                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label for="country" class="block text-sm font-medium text-brand-navy">Country
+                                            of Residence <span class="text-red-500">*</span></label>
+                                        <!-- Select Menu Component -->
+                                        <div class="relative">
+                                            <select id="country" name="country" required
+                                                class="w-full px-4 py-2.5 appearance-none rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all bg-white">
+                                                <option value="" disabled selected>Select a country...</option>
+                                                <option value="Pakistan">Pakistan</option>
+                                                <option value="India">India</option>
+                                                <option value="Bangladesh">Bangladesh</option>
+                                                <option value="Nepal">Nepal</option>
+                                                <option value="Sri Lanka">Sri Lanka</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                                <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="studyLevel"
+                                            class="block text-sm font-medium text-brand-navy">Preferred Study
+                                            Level</label>
+                                        <div class="relative">
+                                            <select id="studyLevel" name="studyLevel"
+                                                class="w-full px-4 py-2.5 appearance-none rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all bg-white">
+                                                <option value="" disabled selected>Select level...</option>
+                                                <option value="Foundation">Foundation</option>
+                                                <option value="Diploma">Diploma</option>
+                                                <option value="Bachelors">Bachelor's Degree</option>
+                                                <option value="Masters">Master's Degree</option>
+                                                <option value="PhD">PhD / Doctorate</option>
+                                            </select>
+                                            <div
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                                <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label for="budget" class="block text-sm font-medium text-brand-navy">Estimated
+                                            Budget (Annual)</label>
+                                        <div class="relative">
+                                            <select id="budget" name="budget"
+                                                class="w-full px-4 py-2.5 appearance-none rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all bg-white">
+                                                <option value="" disabled selected>Select budget range...</option>
+                                                <option value="AUD 20,000 - 30,000">AUD $20,000 - $30,000</option>
+                                                <option value="AUD 30,000 - 40,000">AUD $30,000 - $40,000</option>
+                                                <option value="AUD 40,000+">AUD $40,000+</option>
+                                                <option value="Not sure yet">Not sure yet</option>
+                                            </select>
+                                            <div
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                                <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="intake" class="block text-sm font-medium text-brand-navy">Intended
+                                            Start Date</label>
+                                        <input type="month" id="intake" name="intake"
+                                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label for="field" class="block text-sm font-medium text-brand-navy">Preferred
+                                            Study Field</label>
+                                        <input type="text" id="field" name="field"
+                                            placeholder="e.g. Computer Science, Business"
+                                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                                    </div>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label for="message" class="block text-sm font-medium text-brand-navy">Your Message
+                                        or Questions</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="How can we help you?"
+                                        class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all resize-none"></textarea>
+                                </div>
+
+                                <!-- Checkbox Component -->
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="consent" name="consent" type="checkbox" required
+                                            class="w-4 h-4 text-brand-blue border-gray-300 rounded focus:ring-brand-blue">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="consent" class="font-medium text-brand-slate">I consent to being
+                                            contacted regarding my education enquiry.</label>
+                                        <p class="text-gray-500 text-xs mt-1">We respect your privacy. Submitting this
+                                            form does not guarantee admission or visa approval.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Button Component (Submit) -->
+                                <button type="submit" id="submit-btn"
+                                    class="w-full bg-brand-blue hover:bg-brand-navy text-white font-bold py-3.5 px-6 rounded-lg transition-colors flex justify-center items-center">
+                                    <span id="btn-text">Submit Request</span>
+                                    <i data-lucide="loader-2" id="btn-spinner"
+                                        class="ml-2 h-5 w-5 animate-spin hidden"></i>
+                                </button>
+
+                                <p class="text-xs text-center text-gray-500 mt-4">
+                                    <strong>Note:</strong> Do not include sensitive information like passport numbers or
+                                    passwords in this form.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="bg-brand-navy text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="graduation-cap" class="text-brand-gold h-8 w-8"></i>
+                        <span class="font-bold text-xl tracking-tight">AussiePath Education</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Your trusted partner for international education in Australia.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Home</a></li>
+                        <li><a href="about.html"
+                                class="text-gray-300 hover:text-brand-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="contact.html" class="text-brand-gold font-medium transition-colors text-sm">Contact
+                                Us</a></li>
+                        <li><a href="signin.html"
+                                class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Sign In</a></li>
+                        <li><a href="signup.html"
+                                class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Create Account</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Study Destinations</h3>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-300 text-sm">Sydney, NSW</span></li>
+                        <li><span class="text-gray-300 text-sm">Melbourne, VIC</span></li>
+                        <li><span class="text-gray-300 text-sm">Brisbane, QLD</span></li>
+                        <li><span class="text-gray-300 text-sm">Perth, WA</span></li>
+                        <li><span class="text-gray-300 text-sm">Adelaide, SA</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Contact Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="h-5 w-5 text-brand-gold shrink-0"></i>
+                            <a href="tel:+61200000000"
+                                class="text-gray-300 hover:text-brand-gold transition-colors text-sm">+61 2 0000
+                                0000</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="h-5 w-5 text-brand-gold shrink-0"></i>
+                            <a href="mailto:hello@aussiepath-demo.edu.au"
+                                class="text-gray-300 hover:text-brand-gold transition-colors text-sm">hello@aussiepath-demo.edu.au</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy;
+                    <script>document.write(new Date().getFullYear())</script> AussiePath Education.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

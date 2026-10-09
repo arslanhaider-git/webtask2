@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About AussiePath Education - Learn about our mission, vision, and team.">
+    <title>About Us | AussiePath Education</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Navbar Component -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i data-lucide="graduation-cap" class="text-brand-navy h-8 w-8"></i>
+                    <span class="font-bold text-xl text-brand-navy tracking-tight">AussiePath Education</span>
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-brand-navy hover:text-brand-blue font-medium transition-colors">Home</a>
+                    <a href="about.html" class="nav-link text-brand-blue font-semibold transition-colors">About Us</a>
+                    <a href="contact.html" class="nav-link text-brand-navy hover:text-brand-blue font-medium transition-colors">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="signin.html" class="text-brand-navy hover:text-brand-blue font-medium">Sign In</a>
+                    <a href="signup.html" class="text-brand-navy hover:text-brand-blue font-medium mr-2">Sign Up</a>
+                    <a href="contact.html" class="bg-brand-blue hover:bg-brand-navy text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm inline-flex items-center">
+                        Book a Consultation
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-navy hover:text-brand-blue focus:outline-none" aria-label="Open Menu">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy bg-brand-bg">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Contact</a>
+                <div class="border-t border-gray-100 my-2 pt-2">
+                    <a href="signin.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Sign In</a>
+                    <a href="signup.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Sign Up</a>
+                    <a href="contact.html" class="block mt-2 px-3 py-2 text-center rounded-lg text-base font-medium bg-brand-blue text-white hover:bg-brand-navy">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Page Hero Component -->
+        <section class="bg-brand-bg py-16 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Breadcrumbs Component -->
+                <nav class="flex text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <li class="inline-flex items-center">
+                            <a href="index.html" class="hover:text-brand-blue inline-flex items-center">
+                                <i data-lucide="home" class="w-4 h-4 mr-2"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mx-1"></i>
+                                <span class="text-brand-navy font-medium">About Us</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Guiding Your Journey to Australian Education.</h1>
+                <p class="text-lg text-brand-slate max-w-3xl">Learn about our mission, our values, and how our dedicated team supports international students every step of the way.</p>
+            </div>
+        </section>
+
+        <!-- Mission/Vision Section Component -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team collaborating" class="rounded-2xl shadow-lg">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="mb-8">
+                            <div class="inline-flex items-center space-x-2 bg-brand-bg text-brand-blue px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                                <i data-lucide="target" class="w-4 h-4"></i>
+                                <span>Our Mission</span>
+                            </div>
+                            <h2 class="text-3xl font-bold text-brand-navy mb-4">Empowering students through education.</h2>
+                            <p class="text-brand-slate leading-relaxed">Our mission is to simplify the complex process of international study, providing transparent, honest, and personalized guidance to help students achieve their academic and career goals in Australia.</p>
+                        </div>
+                        
+                        <!-- Divider Component -->
+                        <div class="w-full h-px bg-gray-200 my-8"></div>
+                        
+                        <div>
+                            <div class="inline-flex items-center space-x-2 bg-brand-bg text-brand-gold px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                                <i data-lucide="eye" class="w-4 h-4"></i>
+                                <span>Our Vision</span>
+                            </div>
+                            <h2 class="text-3xl font-bold text-brand-navy mb-4">A world of accessible opportunities.</h2>
+                            <p class="text-brand-slate leading-relaxed">We envision a future where every motivated student has access to world-class Australian education, regardless of their background, bridging cultures and fostering global citizenship.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Steps Component -->
+        <section class="py-20 bg-brand-navy text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Support Process</h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto">How we work with you from the first hello to your arrival in Australia.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="relative bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                        <div class="absolute -top-5 left-6 bg-brand-gold text-brand-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl shadow-lg">1</div>
+                        <h3 class="text-xl font-bold mt-4 mb-3">Consultation</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">We start with a detailed discussion about your academic background, interests, budget, and long-term career aspirations.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                        <div class="absolute -top-5 left-6 bg-brand-gold text-brand-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl shadow-lg">2</div>
+                        <h3 class="text-xl font-bold mt-4 mb-3">Strategy & Planning</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">We provide a curated list of universities and courses, explaining the pros and cons of each pathway to help you decide.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                        <div class="absolute -top-5 left-6 bg-brand-gold text-brand-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl shadow-lg">3</div>
+                        <h3 class="text-xl font-bold mt-4 mb-3">Application</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Our team assists with document preparation, reviews your statement of purpose, and handles the application submission.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                        <div class="absolute -top-5 left-6 bg-brand-gold text-brand-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl shadow-lg">4</div>
+                        <h3 class="text-xl font-bold mt-4 mb-3">Pre-Departure</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Once admitted, we guide you through the visa document checklist and provide briefings on living in Australia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alert/Notice Component -->
+        <section class="py-12 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded-r-lg shadow-sm">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="info" class="h-6 w-6 text-brand-blue"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-brand-navy mb-1">Education Counselling vs. Immigration Advice</h3>
+                            <p class="text-sm text-brand-slate leading-relaxed">
+                                AussiePath Education provides <strong>education counselling</strong> and administrative support for your university applications. We help you understand the student visa document requirements. However, we are <strong>not registered migration agents</strong> and do not provide official immigration advice. All visa applications are assessed by the Australian Department of Home Affairs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Profile Cards Component -->
+        <section class="py-20 bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Meet Our Advisors</h2>
+                    <p class="text-lg text-brand-slate max-w-2xl mx-auto">Our fictional sample team of dedicated education professionals.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Profile Card 1 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 text-center">
+                        <div class="h-32 bg-gradient-to-r from-brand-navy to-brand-blue"></div>
+                        <div class="relative px-6 pb-6">
+                            <div class="w-24 h-24 mx-auto -mt-12 rounded-full border-4 border-white bg-gray-200 overflow-hidden mb-4">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Jane Doe" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy">Jane Doe</h3>
+                            <p class="text-brand-blue text-sm font-medium mb-3">Senior Education Advisor</p>
+                            <p class="text-gray-500 text-sm mb-4">Jane specializes in postgraduate applications and scholarship guidance.</p>
+                            <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded">Placeholder Profile</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Card 2 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 text-center">
+                        <div class="h-32 bg-gradient-to-r from-brand-navy to-brand-blue"></div>
+                        <div class="relative px-6 pb-6">
+                            <div class="w-24 h-24 mx-auto -mt-12 rounded-full border-4 border-white bg-gray-200 overflow-hidden mb-4">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="John Smith" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy">John Smith</h3>
+                            <p class="text-brand-blue text-sm font-medium mb-3">Admissions Specialist</p>
+                            <p class="text-gray-500 text-sm mb-4">John has over 5 years of experience navigating complex admission processes.</p>
+                            <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded">Placeholder Profile</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Card 3 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 text-center">
+                        <div class="h-32 bg-gradient-to-r from-brand-navy to-brand-blue"></div>
+                        <div class="relative px-6 pb-6">
+                            <div class="w-24 h-24 mx-auto -mt-12 rounded-full border-4 border-white bg-gray-200 overflow-hidden mb-4">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Emily Chen" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy">Emily Chen</h3>
+                            <p class="text-brand-blue text-sm font-medium mb-3">Student Support Coordinator</p>
+                            <p class="text-gray-500 text-sm mb-4">Emily helps students prepare for their transition to Australian life.</p>
+                            <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded">Placeholder Profile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="bg-brand-navy text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="graduation-cap" class="text-brand-gold h-8 w-8"></i>
+                        <span class="font-bold text-xl tracking-tight">AussiePath Education</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Your trusted partner for international education in Australia. We provide guidance, support, and expert advice for your study journey.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Home</a></li>
+                        <li><a href="about.html" class="text-brand-gold font-medium transition-colors text-sm">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Contact Us</a></li>
+                        <li><a href="signin.html" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Sign In</a></li>
+                        <li><a href="signup.html" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Create Account</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Study Destinations</h3>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-300 text-sm">Sydney, NSW</span></li>
+                        <li><span class="text-gray-300 text-sm">Melbourne, VIC</span></li>
+                        <li><span class="text-gray-300 text-sm">Brisbane, QLD</span></li>
+                        <li><span class="text-gray-300 text-sm">Perth, WA</span></li>
+                        <li><span class="text-gray-300 text-sm">Adelaide, SA</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Contact Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-brand-gold shrink-0 mt-0.5"></i>
+                            <span class="text-gray-300 text-sm">123 Education Boulevard<br>Sydney NSW 2000, Australia<br><em class="text-xs text-gray-400">(Demonstration Address)</em></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="h-5 w-5 text-brand-gold shrink-0"></i>
+                            <a href="tel:+61200000000" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">+61 2 0000 0000</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="h-5 w-5 text-brand-gold shrink-0"></i>
+                            <a href="mailto:hello@aussiepath-demo.edu.au" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">hello@aussiepath-demo.edu.au</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center md:flex md:justify-between md:text-left">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; <script>document.write(new Date().getFullYear())</script> AussiePath Education. All rights reserved.
+                </p>
+                <div class="text-gray-400 text-xs max-w-lg mx-auto md:mx-0">
+                    <strong>Disclaimer:</strong> This is a demonstration website. AussiePath Education is a fictional entity. Education and visa outcomes are not guaranteed.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

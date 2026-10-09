@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AussiePath Education - Your Australian Education Journey Starts Here.">
+    <title>Study in Australia | AussiePath Education</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Navbar Component -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i data-lucide="graduation-cap" class="text-brand-navy h-8 w-8"></i>
+                    <span class="font-bold text-xl text-brand-navy tracking-tight">AussiePath Education</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-brand-navy hover:text-brand-blue font-medium transition-colors">Home</a>
+                    <a href="about.html" class="nav-link text-brand-navy hover:text-brand-blue font-medium transition-colors">About Us</a>
+                    <a href="contact.html" class="nav-link text-brand-navy hover:text-brand-blue font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop Auth & CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="signin.html" class="text-brand-navy hover:text-brand-blue font-medium">Sign In</a>
+                    <a href="signup.html" class="text-brand-navy hover:text-brand-blue font-medium mr-2">Sign Up</a>
+                    <a href="contact.html" class="bg-brand-blue hover:bg-brand-navy text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm inline-flex items-center">
+                        Book a Consultation
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-navy hover:text-brand-blue focus:outline-none" aria-label="Open Menu">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy bg-brand-bg">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Contact</a>
+                <div class="border-t border-gray-100 my-2 pt-2">
+                    <a href="signin.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Sign In</a>
+                    <a href="signup.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg hover:text-brand-blue">Sign Up</a>
+                    <a href="contact.html" class="block mt-2 px-3 py-2 text-center rounded-lg text-base font-medium bg-brand-blue text-white hover:bg-brand-navy">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section Component -->
+        <section class="relative bg-brand-navy text-white overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-30">
+                <img src="https://images.unsplash.com/photo-1523580494112-071dcb92a159?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Australian University Campus" class="w-full h-full object-cover" />
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
+                <div class="max-w-2xl">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-blue/20 border border-brand-blue/50 text-brand-gold text-sm font-semibold tracking-wide mb-4">
+                        Discover Your Potential
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                        Your Future in Australia Starts Here.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-xl leading-relaxed">
+                        We provide comprehensive support for international students throughout their study journey. From selecting the right university to navigating the admission process and beyond.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="bg-brand-gold hover:bg-yellow-500 text-brand-navy font-semibold px-8 py-3.5 rounded-lg text-center transition-colors shadow-lg">
+                            Book a Free Consultation
+                        </a>
+                        <a href="about.html" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-medium px-8 py-3.5 rounded-lg text-center transition-colors backdrop-blur-sm">
+                            Explore Our Services
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators Component -->
+                    <div class="mt-12 pt-8 border-t border-white/20 grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-bold text-white mb-1">Personalized</span>
+                            <span class="text-sm text-gray-300">Expert Guidance</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-bold text-white mb-1">End-to-End</span>
+                            <span class="text-sm text-gray-300">Application Support</span>
+                        </div>
+                        <div class="flex flex-col hidden md:flex">
+                            <span class="text-3xl font-bold text-white mb-1">100%</span>
+                            <span class="text-sm text-gray-300">Student-Focused</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Cards Component -->
+        <section class="py-20 bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">How We Can Help You</h2>
+                    <p class="text-lg text-brand-slate max-w-2xl mx-auto">Comprehensive services tailored to make your Australian education dream a reality.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 p-8 border border-gray-100 group">
+                        <div class="h-14 w-14 bg-brand-bg rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors duration-300">
+                            <i data-lucide="building-2" class="h-7 w-7 text-brand-blue group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">University Selection</h3>
+                        <p class="text-brand-slate leading-relaxed mb-6">Find the perfect institution and course that aligns with your academic background and career goals.</p>
+                        <a href="about.html" class="inline-flex items-center text-brand-blue font-medium hover:text-brand-navy group-hover:translate-x-1 transition-transform">
+                            Learn more <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 p-8 border border-gray-100 group">
+                        <div class="h-14 w-14 bg-brand-bg rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors duration-300">
+                            <i data-lucide="file-check-2" class="h-7 w-7 text-brand-blue group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Admission Guidance</h3>
+                        <p class="text-brand-slate leading-relaxed mb-6">Expert assistance with your application forms, statement of purpose, and required documentation.</p>
+                        <a href="about.html" class="inline-flex items-center text-brand-blue font-medium hover:text-brand-navy group-hover:translate-x-1 transition-transform">
+                            Learn more <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 p-8 border border-gray-100 group">
+                        <div class="h-14 w-14 bg-brand-bg rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors duration-300">
+                            <i data-lucide="passport" class="h-7 w-7 text-brand-blue group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Visa Process Guidance</h3>
+                        <p class="text-brand-slate leading-relaxed mb-6">Understand the requirements and get help preparing your documents for the student visa application.</p>
+                        <a href="about.html" class="inline-flex items-center text-brand-blue font-medium hover:text-brand-navy group-hover:translate-x-1 transition-transform">
+                            Learn more <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Steps with Badges Component -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">A Simple Path to Your Dream University</h2>
+                        <p class="text-lg text-brand-slate mb-10">We simplify the complex process of studying abroad into four clear, manageable steps.</p>
+                        
+                        <div class="space-y-8">
+                            <!-- Step 1 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-blue text-white font-bold shadow-md">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-navy mb-2">Discover</h4>
+                                    <p class="text-brand-slate">Meet with our advisors to explore courses, universities, and potential career paths in Australia.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-blue text-white font-bold shadow-md">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-navy mb-2">Prepare</h4>
+                                    <p class="text-brand-slate">Gather your academic transcripts, English proficiency scores, and prepare your application documents.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-blue text-white font-bold shadow-md">3</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-navy mb-2">Apply</h4>
+                                    <p class="text-brand-slate">Submit your applications to chosen institutions and receive guidance on the student visa process.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0">
+                                    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-blue text-white font-bold shadow-md">4</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-navy mb-2">Get Ready</h4>
+                                    <p class="text-brand-slate">Receive pre-departure briefings, accommodation advice, and prepare for your exciting new life.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 w-full">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Students studying together" class="rounded-2xl shadow-2xl w-full object-cover h-[600px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Destinations / Image Section Component -->
+        <section class="py-20 bg-brand-navy text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Top Study Destinations</h2>
+                        <p class="text-gray-300 max-w-2xl">Explore Australia's most popular student cities, each offering world-class education and an amazing lifestyle.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Destination 1 -->
+                    <div class="relative group overflow-hidden rounded-xl aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sydney Opera House" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-brand-gold text-brand-navy text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Popular</span>
+                            <h3 class="text-2xl font-bold mb-1">Sydney</h3>
+                            <p class="text-sm text-gray-200">New South Wales</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 2 -->
+                    <div class="relative group overflow-hidden rounded-xl aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1514395462725-fb4566210144?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Melbourne City" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold mb-1">Melbourne</h3>
+                            <p class="text-sm text-gray-200">Victoria</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 3 -->
+                    <div class="relative group overflow-hidden rounded-xl aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brisbane River" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold mb-1">Brisbane</h3>
+                            <p class="text-sm text-gray-200">Queensland</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 4 -->
+                    <div class="relative group overflow-hidden rounded-xl aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1582236814030-22c6769919f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Perth Skyline" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold mb-1">Perth</h3>
+                            <p class="text-sm text-gray-200">Western Australia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Panel Component -->
+        <section class="py-20 bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Student Experiences</h2>
+                    <p class="text-lg text-brand-slate max-w-2xl mx-auto">Hear from students who have started their journey with our guidance.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                        <i data-lucide="quote" class="absolute top-6 right-6 h-10 w-10 text-brand-bg opacity-50"></i>
+                        <p class="text-brand-slate italic mb-6 relative z-10">
+                            "AussiePath Education made the overwhelming process of applying to universities so much easier. Their counselors were patient and provided clear, step-by-step guidance."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="h-12 w-12 bg-gray-200 rounded-full flex items-center justify-center text-brand-navy font-bold text-xl mr-4">
+                                S
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy">Sarah A.</h4>
+                                <p class="text-sm text-gray-500">Sample Testimonial &bull; Studying in Sydney</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                        <i data-lucide="quote" class="absolute top-6 right-6 h-10 w-10 text-brand-bg opacity-50"></i>
+                        <p class="text-brand-slate italic mb-6 relative z-10">
+                            "I wasn't sure which course would best suit my career goals. The team helped me explore different pathways and I am now happily enrolled in a program I love."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="h-12 w-12 bg-gray-200 rounded-full flex items-center justify-center text-brand-navy font-bold text-xl mr-4">
+                                R
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy">Rahul M.</h4>
+                                <p class="text-sm text-gray-500">Sample Testimonial &bull; Studying in Melbourne</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion Component -->
+        <section class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Frequently Asked Questions</h2>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-brand-bg transition-colors focus:outline-none">
+                            <span class="font-semibold text-brand-navy text-left">Do you guarantee university admission?</span>
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-brand-blue transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content hidden p-5 bg-white border-t border-gray-100 text-brand-slate">
+                            No. While we provide expert guidance to maximize your chances, admission decisions are made solely by the respective universities and colleges based on their entry requirements.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-brand-bg transition-colors focus:outline-none">
+                            <span class="font-semibold text-brand-navy text-left">Can you guarantee my student visa approval?</span>
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-brand-blue transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content hidden p-5 bg-white border-t border-gray-100 text-brand-slate">
+                            No. Student visa decisions are made entirely by the Australian Department of Home Affairs. We provide guidance on the document preparation process, but we cannot guarantee outcomes.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-brand-bg transition-colors focus:outline-none">
+                            <span class="font-semibold text-brand-navy text-left">Is the initial consultation free?</span>
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-brand-blue transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content hidden p-5 bg-white border-t border-gray-100 text-brand-slate">
+                            Yes, your first discovery consultation is free. We use this time to understand your goals, assess your background, and explain how we can support your journey.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner Component -->
+        <section class="py-16 bg-gradient-to-r from-brand-navy to-brand-blue">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Ready to take the first step?</h2>
+                <p class="text-lg text-gray-200 mb-8">Book a consultation today and let us guide you towards your educational goals in Australia.</p>
+                <a href="contact.html" class="inline-flex items-center justify-center bg-brand-gold hover:bg-yellow-500 text-brand-navy font-bold px-8 py-4 rounded-lg shadow-lg transition-transform hover:scale-105">
+                    Book Your Free Consultation
+                    <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="bg-brand-navy text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="graduation-cap" class="text-brand-gold h-8 w-8"></i>
+                        <span class="font-bold text-xl tracking-tight">AussiePath Education</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Your trusted partner for international education in Australia. We provide guidance, support, and expert advice for your study journey.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="h-5 w-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors" aria-label="Twitter"><i data-lucide="twitter" class="h-5 w-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="h-5 w-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-brand-gold font-medium transition-colors text-sm">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Contact Us</a></li>
+                        <li><a href="signin.html" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Sign In</a></li>
+                        <li><a href="signup.html" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">Create Account</a></li>
+                    </ul>
+                </div>
+
+                <!-- Study Destinations -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Study Destinations</h3>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-300 text-sm">Sydney, NSW</span></li>
+                        <li><span class="text-gray-300 text-sm">Melbourne, VIC</span></li>
+                        <li><span class="text-gray-300 text-sm">Brisbane, QLD</span></li>
+                        <li><span class="text-gray-300 text-sm">Perth, WA</span></li>
+                        <li><span class="text-gray-300 text-sm">Adelaide, SA</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Contact Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-brand-gold shrink-0 mt-0.5"></i>
+                            <span class="text-gray-300 text-sm">123 Education Boulevard<br>Sydney NSW 2000, Australia<br><em class="text-xs text-gray-400">(Demonstration Address)</em></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="h-5 w-5 text-brand-gold shrink-0"></i>
+                            <a href="tel:+61200000000" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">+61 2 0000 0000</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="h-5 w-5 text-brand-gold shrink-0"></i>
+                            <a href="mailto:hello@aussiepath-demo.edu.au" class="text-gray-300 hover:text-brand-gold transition-colors text-sm">hello@aussiepath-demo.edu.au</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center md:flex md:justify-between md:text-left">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; <script>document.write(new Date().getFullYear())</script> AussiePath Education. All rights reserved.
+                </p>
+                <div class="text-gray-400 text-xs max-w-lg mx-auto md:mx-0">
+                    <strong>Disclaimer:</strong> This is a demonstration website. AussiePath Education is a fictional entity. Education and visa outcomes are not guaranteed and are subject to the relevant Australian authorities. We do not provide official immigration advice.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

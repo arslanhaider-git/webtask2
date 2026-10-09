@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create an AussiePath Education account.">
+    <title>Create an Account | AussiePath Education</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="flex flex-col min-h-screen bg-brand-bg">
+    <!-- Navbar Component -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i data-lucide="graduation-cap" class="text-brand-navy h-8 w-8"></i>
+                    <span class="font-bold text-xl text-brand-navy tracking-tight">AussiePath Education</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="signin.html" class="text-brand-navy hover:text-brand-blue font-medium mr-2">Already have an account? Sign In</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="p-8 sm:p-12">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-brand-navy mb-2">Start Your Australian Education Journey</h1>
+                    <p class="text-brand-slate text-sm">Create an account to save your preferences and track your applications.</p>
+                </div>
+
+                <!-- Alert Component -->
+                <div id="auth-alert" class="hidden mb-6 p-4 rounded-lg border text-sm flex items-start"></div>
+
+                <form id="signup-form" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label for="fullName" class="block text-sm font-medium text-brand-navy">Full Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label for="phone" class="block text-sm font-medium text-brand-navy">Phone Number <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 8900" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="email" class="block text-sm font-medium text-brand-navy">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="name@example.com" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label for="country" class="block text-sm font-medium text-brand-navy">Country of Residence</label>
+                            <div class="relative">
+                                <select id="country" name="country" class="w-full px-4 py-2.5 appearance-none rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all bg-white">
+                                    <option value="" disabled selected>Select country...</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                    <option value="India">India</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                    <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="studyLevel" class="block text-sm font-medium text-brand-navy">Preferred Study Level</label>
+                            <div class="relative">
+                                <select id="studyLevel" name="studyLevel" class="w-full px-4 py-2.5 appearance-none rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all bg-white">
+                                    <option value="" disabled selected>Select level...</option>
+                                    <option value="Bachelors">Bachelor's</option>
+                                    <option value="Masters">Master's</option>
+                                    <option value="PhD">PhD</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                    <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="studyField" class="block text-sm font-medium text-brand-navy">Intended Study Field</label>
+                        <div class="relative">
+                            <select id="studyField" name="studyField" class="w-full px-4 py-2.5 appearance-none rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all bg-white">
+                                <option value="" disabled selected>Select field...</option>
+                                <option value="IT">IT & Computer Science</option>
+                                <option value="Business">Business & Management</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Health">Health & Medicine</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label for="password" class="block text-sm font-medium text-brand-navy">Password <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <input type="password" id="password" name="password" required class="w-full pl-4 pr-10 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                                <button type="button" id="toggle-password" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-brand-blue focus:outline-none">
+                                    <i data-lucide="eye" id="eye-icon" class="h-5 w-5"></i>
+                                </button>
+                            </div>
+                            <!-- Password Strength Indicator Component -->
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 mt-2">
+                                <div id="password-strength-bar" class="bg-red-500 h-1.5 rounded-full" style="width: 0%"></div>
+                            </div>
+                            <p id="password-strength-text" class="text-xs text-gray-500 mt-1">At least 8 characters</p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="confirmPassword" class="block text-sm font-medium text-brand-navy">Confirm Password <span class="text-red-500">*</span></label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all">
+                            <p id="password-match-text" class="text-xs text-red-500 mt-1 hidden">Passwords do not match</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start mt-4">
+                        <div class="flex items-center h-5">
+                            <input id="terms" name="terms" type="checkbox" required class="w-4 h-4 text-brand-blue border-gray-300 rounded focus:ring-brand-blue">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="terms" class="font-medium text-brand-slate">I agree to the <a href="#" class="text-brand-blue hover:underline">Terms of Service</a> and <a href="#" class="text-brand-blue hover:underline">Privacy Policy</a>.</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-blue hover:bg-brand-navy text-white font-bold py-3.5 px-4 rounded-lg transition-colors shadow-md mt-6">
+                        Create Account
+                    </button>
+                    
+                </form>
+                
+                <div class="mt-6 text-center sm:hidden">
+                    <p class="text-sm text-gray-600">Already have an account? <a href="signin.html" class="font-medium text-brand-blue hover:text-brand-navy">Sign In</a></p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 px-8 py-6 border-t border-gray-100 flex items-center justify-center space-x-6">
+                <p class="text-sm text-gray-500 font-medium">Secure registration via</p>
+                <div class="flex space-x-4">
+                    <i data-lucide="shield-check" class="h-6 w-6 text-green-500"></i>
+                    <i data-lucide="lock" class="h-6 w-6 text-brand-navy"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="bg-white border-t border-gray-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 text-sm">&copy; <script>document.write(new Date().getFullYear())</script> AussiePath Education.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="text-gray-500 hover:text-brand-navy text-sm">Privacy</a>
+                <a href="#" class="text-gray-500 hover:text-brand-navy text-sm">Terms</a>
+                <a href="contact.html" class="text-gray-500 hover:text-brand-navy text-sm">Help</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
