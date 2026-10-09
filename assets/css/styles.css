@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+    background-color: #ffffff;
+}
+
+/* Custom Utilities that Tailwind CDN might miss or are complex */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
