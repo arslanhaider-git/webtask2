@@ -1,0 +1,8 @@
+{
+  "name": "AussiePath Education",
+  "description": "Comprehensive international student education consultancy for Australia - university selection, admission guidance, student visa process, and personalized counseling.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AussiePath Education - Student Portal with CRUD and Public API">
+    <title>Student Portal (CRUD & API) | AussiePath Education</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#102A43',
+                            blue: '#1769AA',
+                            gold: '#F4B942',
+                            bg: '#F3F7FB',
+                            slate: '#334155'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+</head>
+<body class="flex flex-col min-h-screen bg-[#F8FAFC]">
+    <!-- Navbar Component -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-2">
+                    <i data-lucide="graduation-cap" class="text-brand-navy h-8 w-8"></i>
+                    <span class="font-bold text-xl text-brand-navy tracking-tight">AussiePath Education</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-brand-navy hover:text-brand-blue font-medium transition-colors">Home</a>
+                    <a href="/about" class="text-brand-navy hover:text-brand-blue font-medium transition-colors">About Us</a>
+                    <a href="/student-portal" class="text-brand-blue font-semibold transition-colors flex items-center">
+                        Student Portal
+                    </a>
+                    <a href="/contact" class="text-brand-navy hover:text-brand-blue font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/signin" class="text-brand-navy hover:text-brand-blue font-medium text-sm">Sign In</a>
+                    <a href="/signup" class="text-brand-navy hover:text-brand-blue font-medium text-sm">Sign Up</a>
+                    <a href="/contact" class="bg-brand-blue hover:bg-brand-navy text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors">
+                        Book a Consultation
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="mobile-menu-btn" class="text-brand-navy hover:text-brand-blue focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg">Home</a>
+                <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg">About Us</a>
+                <a href="/student-portal" class="block px-3 py-2 rounded-md text-base font-semibold text-brand-blue bg-brand-bg">Student Portal</a>
+                <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:bg-brand-bg">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Banner -->
+        <section class="bg-brand-navy text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <div>
+                        <span class="inline-block py-1 px-3 rounded-full bg-brand-blue/30 border border-brand-gold/30 text-brand-gold text-xs font-semibold mb-3">
+                            Student Management & University Directory
+                        </span>
+                        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Student Applications Portal</h1>
+                        <p class="text-gray-300 text-base mt-2 max-w-2xl">
+                            Manage student applications using local storage persistence (Add, Read, Update, Delete) and search through live Australian universities using Axios.
+                        </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="open-add-btn" class="bg-brand-gold hover:bg-yellow-400 text-brand-navy font-bold px-5 py-3 rounded-lg shadow-md transition-all flex items-center space-x-2 text-sm">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <span>New Student Record</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                        <span class="text-xs text-gray-300">Total Applications</span>
+                        <p id="stat-total" class="text-2xl font-bold text-white mt-1">0</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                        <span class="text-xs text-purple-200">Under Review</span>
+                        <p id="stat-review" class="text-2xl font-bold text-purple-300 mt-1">0</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                        <span class="text-xs text-blue-200">Offers Issued</span>
+                        <p id="stat-offers" class="text-2xl font-bold text-blue-300 mt-1">0</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-4 border border-white/10">
+                        <span class="text-xs text-green-200">Visas Approved</span>
+                        <p id="stat-visas" class="text-2xl font-bold text-green-300 mt-1">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Records Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+            <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-6 border-b border-gray-100 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <h2 class="text-xl font-bold text-brand-navy flex items-center space-x-2">
+                                <i data-lucide="users" class="h-5 w-5 text-brand-blue"></i>
+                                <span>Student Applications Management</span>
+                            </h2>
+                            <p class="text-xs text-brand-slate mt-1">
+                                Persisted with <code>localStorage.setItem()</code> • Filtered in real-time
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Filter Toolbar -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <input type="text" id="crud-search" placeholder="Search by student name or course..." class="px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue outline-none">
+                        <select id="crud-level-filter" class="px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue outline-none bg-white">
+                            <option value="All">All Study Levels</option>
+                            <option value="Bachelor's">Bachelor's Degree</option>
+                            <option value="Master's">Master's Degree</option>
+                            <option value="PhD">PhD / Doctorate</option>
+                            <option value="Diploma">Diploma</option>
+                        </select>
+                        <select id="crud-status-filter" class="px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue outline-none bg-white">
+                            <option value="All">All Statuses</option>
+                            <option value="Inquiry">Inquiry</option>
+                            <option value="Documents Pending">Documents Pending</option>
+                            <option value="Under Review">Under Review</option>
+                            <option value="Offer Issued">Offer Issued</option>
+                            <option value="Visa Lodged">Visa Lodged</option>
+                            <option value="Visa Approved">Visa Approved</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-gray-700">
+                        <thead class="bg-gray-50 text-xs text-brand-navy font-semibold uppercase tracking-wider border-b border-gray-200">
+                            <tr>
+                                <th class="px-6 py-4">Student</th>
+                                <th class="px-6 py-4">Contact</th>
+                                <th class="px-6 py-4">University & Course</th>
+                                <th class="px-6 py-4">Level & Intake</th>
+                                <th class="px-6 py-4">Status</th>
+                                <th class="px-6 py-4 text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-table-body" class="divide-y divide-gray-100">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Axios Public API Section -->
+            <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-gray-100">
+                    <div>
+                        <span class="inline-block bg-blue-50 text-brand-blue text-xs font-bold px-2.5 py-1 rounded-md mb-2">
+                            Public API Integration via Axios
+                        </span>
+                        <h2 class="text-2xl font-bold text-brand-navy">Australian Universities Registry</h2>
+                        <p class="text-sm text-brand-slate mt-1">
+                            Fetched using <code>axios.get('https://universities.hipolabs.com/search?country=Australia')</code>
+                        </p>
+                    </div>
+                    <button id="refresh-api-btn" class="bg-brand-bg text-brand-blue border border-brand-blue/30 px-3.5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-100 transition-colors">
+                        Refresh Universities
+                    </button>
+                </div>
+
+                <div id="api-loading" class="py-12 text-center hidden">
+                    <i data-lucide="loader-2" class="w-8 h-8 animate-spin text-brand-blue mx-auto mb-2"></i>
+                    <p class="text-sm text-gray-600">Loading Australian universities from public API via Axios...</p>
+                </div>
+
+                <div id="api-error" class="p-4 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg hidden mt-4"></div>
+
+                <div id="api-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+                    <!-- Cards populated dynamically via Axios -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-8 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
+            &copy; 2025 AussiePath Education. Web Technologies Assignment 03.
+        </div>
+    </footer>
+
+    <!-- Standalone Script for Pure HTML / Assignment Execution -->
+    <script>
+        const STORAGE_KEY = 'aussiepath_students_v1';
+        let students = [];
+
+        function loadStudents() {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (raw) {
+                try {
+                    students = JSON.parse(raw);
+                } catch(e) {
+                    students = [];
+                }
+            } else {
+                students = [
+                    { id: 'STU-1001', fullName: 'Amina Khan', email: 'amina.k@example.com', phone: '+92 300 1234567', university: 'University of Melbourne', course: 'Master of Information Technology', studyLevel: "Master's", intake: 'Feb 2025', status: 'Visa Approved' },
+                    { id: 'STU-1002', fullName: 'Rohan Sharma', email: 'rohan.sharma@example.com', phone: '+91 98765 43210', university: 'UNSW Sydney', course: 'Bachelor of Computer Science', studyLevel: "Bachelor's", intake: 'July 2025', status: 'Offer Issued' },
+                    { id: 'STU-1003', fullName: 'Tanvir Hossain', email: 'tanvir.h@example.com', phone: '+880 1711 234567', university: 'University of Sydney', course: 'Master of Data Science', studyLevel: "Master's", intake: 'Feb 2025', status: 'Under Review' }
+                ];
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
+            }
+            renderTable();
+            updateStats();
+        }
+
+        function updateStats() {
+            document.getElementById('stat-total').textContent = students.length;
+            document.getElementById('stat-review').textContent = students.filter(s => s.status === 'Under Review').length;
+            document.getElementById('stat-offers').textContent = students.filter(s => s.status === 'Offer Issued').length;
+            document.getElementById('stat-visas').textContent = students.filter(s => s.status === 'Visa Approved').length;
+        }
+
+        function renderTable() {
+            const q = document.getElementById('crud-search').value.toLowerCase().trim();
+            const level = document.getElementById('crud-level-filter').value;
+            const status = document.getElementById('crud-status-filter').value;
+
+            // Array Methods: filter() and map()
+            const filtered = students.filter(s => {
+                const matchesQ = !q || s.fullName.toLowerCase().includes(q) || s.course.toLowerCase().includes(q) || s.university.toLowerCase().includes(q);
+                const matchesL = level === 'All' || s.studyLevel === level;
+                const matchesS = status === 'All' || s.status === status;
+                return matchesQ && matchesL && matchesS;
+            });
+
+            const tbody = document.getElementById('student-table-body');
+            tbody.innerHTML = filtered.map(s => `
+                <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="px-6 py-4 font-semibold text-brand-navy">${s.fullName} <span class="text-xs text-gray-400 block">${s.id}</span></td>
+                    <td class="px-6 py-4 text-xs text-gray-600">${s.email}<br>${s.phone}</td>
+                    <td class="px-6 py-4 font-medium text-brand-navy">${s.university}<span class="text-xs text-gray-500 block">${s.course}</span></td>
+                    <td class="px-6 py-4 text-xs">${s.studyLevel}<span class="text-gray-400 block">${s.intake}</span></td>
+                    <td class="px-6 py-4"><span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-50 text-brand-blue border border-blue-200">${s.status}</span></td>
+                    <td class="px-6 py-4 text-right">
+                        <button onclick="deleteStudentRecord('${s.id}')" class="text-red-500 hover:text-red-700 text-xs font-semibold">Delete</button>
+                    </td>
+                </tr>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        window.deleteStudentRecord = function(id) {
+            if (confirm('Delete this student application?')) {
+                students = students.filter(s => s.id !== id);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
+                renderTable();
+                updateStats();
+            }
+        };
+
+        // Axios Public API Call
+        async function fetchUniversities() {
+            const loading = document.getElementById('api-loading');
+            const errorBox = document.getElementById('api-error');
+            const cards = document.getElementById('api-cards');
+
+            loading.classList.remove('hidden');
+            errorBox.classList.add('hidden');
+            cards.innerHTML = '';
+
+            try {
+                // Axios GET
+                const response = await axios.get('https://universities.hipolabs.com/search?country=Australia');
+                const list = response.data.slice(0, 8);
+                cards.innerHTML = list.map(u => `
+                    <div class="p-4 rounded-xl border border-gray-200 bg-white shadow-xs">
+                        <h4 class="font-bold text-brand-navy text-sm mb-1 line-clamp-2">${u.name}</h4>
+                        <p class="text-xs text-gray-500 mb-2">${u['state-province'] || 'Australia'}</p>
+                        ${u.web_pages[0] ? `<a href="${u.web_pages[0]}" target="_blank" class="text-xs text-brand-blue hover:underline">Official Site &rarr;</a>` : ''}
+                    </div>
+                `).join('');
+            } catch (err) {
+                errorBox.textContent = 'Could not load live university API. Please check your internet connection.';
+                errorBox.classList.remove('hidden');
+            } finally {
+                loading.classList.add('hidden');
+                lucide.createIcons();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadStudents();
+            fetchUniversities();
+            document.getElementById('crud-search').addEventListener('input', renderTable);
+            document.getElementById('crud-level-filter').addEventListener('change', renderTable);
+            document.getElementById('crud-status-filter').addEventListener('change', renderTable);
+            document.getElementById('refresh-api-btn').addEventListener('click', fetchUniversities);
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
